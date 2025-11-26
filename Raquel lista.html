@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Lista de Raquel</title>
+    </head>
+    <body style="background-color: rgb(225, 255, 186);">
+        <h1 align="center" style="font-family: Georgia, 'Times New Roman', Times, serif;">Lista de Raquel</h1>
+       <table>
+            <tr>
+            <td><input type="text" id="miTexto0" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck0"><br><br>
+            <input type="text" id="miTexto1" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck1"><br><br>
+            <input type="text" id="miTexto2" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck2"><br><br>
+            <input type="text" id="miTexto3" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck3"><br><br>
+            <input type="text" id="miTexto4" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck4"><br><br>
+            <input type="text" id="miTexto5" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck5"><br><br>
+            <input type="text" id="miTexto6" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck6"><br><br>
+            <input type="text" id="miTexto7" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck7"><br><br>
+            <input type="text" id="miTexto8" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck8"><br><br>
+            <input type="text" id="miTexto9" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck9"><br><br>
+            <input type="text" id="miTexto10" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck10"><br><br>
+            <input type="text" id="miTexto11" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck11"><br><br>
+            <input type="text" id="miTexto12" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck12"><br><br>
+            <input type="text" id="miTexto13" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck13"><br><br></td>
+            
+            <td><input type="text" id="miTexto14" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck14"><br><br>
+            <input type="text" id="miTexto15" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck15"><br><br>
+            <input type="text" id="miTexto16" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck16"><br><br>
+            <input type="text" id="miTexto17" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck17"><br><br>
+            <input type="text" id="miTexto18" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck18"><br><br>
+            <input type="text" id="miTexto19" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck19"><br><br>
+            <input type="text" id="miTexto20" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck20"><br><br>
+            <input type="text" id="miTexto21" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck21"><br><br>
+            <input type="text" id="miTexto22" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck22"><br><br>
+            <input type="text" id="miTexto23" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck23"><br><br>
+            <input type="text" id="miTexto24" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck24"><br><br>
+            <input type="text" id="miTexto25" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck25"><br><br>
+            <input type="text" id="miTexto26" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck26"><br><br>
+            <input type="text" id="miTexto27" placeholder="Escribe algo..."> <input type="checkbox" id="miCheck27"><br><br></td>
+            </tr>
+        </table> 
+
+
+        <script>
+        /* Textos */
+        for (let i = 0; i < 28; i++) {
+            const txt = document.getElementById("miTexto" + i);
+
+            if (txt) {
+                // Cargar al iniciar
+                const guardado = localStorage.getItem("miTexto" + i);
+                if (guardado !== null) txt.value = guardado;
+
+                // Guardar cuando cambie
+                txt.addEventListener("input", () => {
+                    localStorage.setItem("miTexto" + i, txt.value);
+                });
+            }
+        }
+
+        /* Checkboxs */
+        for (let i = 0; i < 28; i++) {
+            const chk = document.getElementById("miCheck" + i);
+
+            if (chk) {
+                // Cargar al iniciar
+                const guardado = localStorage.getItem("miCheck" + i);
+                if (guardado === "true") chk.checked = true;
+
+                // Guardar cuando cambie
+                chk.addEventListener("change", () => {
+                    localStorage.setItem("miCheck" + i, chk.checked);
+                });
+            }
+        }
+        </script>
+    </body>
+</html>
